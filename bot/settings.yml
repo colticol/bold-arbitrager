@@ -1,0 +1,50 @@
+#############################################
+# Check Parameters before staring
+#############################################
+exchange:
+  bitbank:
+    use: True
+    api_key:
+    api_secret:
+  bitflyer:
+    use: True
+    api_key:
+    api_secret:
+  bitfinex:
+    use: False
+    api_key:
+    api_secret:
+  btcbox:
+    use: True
+    api_key:
+    api_secret:
+  coincheck:
+    use: False
+    api_key:
+    api_secret:
+  coinex:
+    use: False
+    api_key:
+    api_secret:
+  kraken:
+    use: False
+    api_key:
+    api_secret:
+  liquid:
+    use: True
+    api_key:
+    api_secret:
+  zaif:
+    use: True
+    api_key:
+    api_secret:
+logic:
+  demo: True
+  symbols: BTC/JPY  # example: BTC/JPY;BCH/JPY;BTC/ETH
+  margin: 0.001
+  interval: 1
+notification:
+  discord:
+    webhook_url:       # How to get: https://note.mu/asim0613/n/n23073851a93c
+  line:
+    token:             # ref. https://notify-bot.line.me/ja/ , How to get: https://www.takeiho.com/python-line-bot
