@@ -12,8 +12,16 @@ class ExchangeClient(object):
     self.__exchange.apiKey = api['api_key']
     self.__exchange.secret = api['api_secret']
     self.__fee = FEE[name]
-    self.__balance = self.update_balance()
+    self.__balance = None
+    self.__bid = None
+    self.__ask = None
     self.__demo = demo
+
+  def bid(self):
+    return self.__bid
+
+  def ask(self):
+    return self.__ask
 
   def update_balance(self):
     try:
@@ -26,6 +34,7 @@ class ExchangeClient(object):
     try:
       orderbook = self.__exchange.fetch_order_book(symbol)
     except Exception as e:
+      self.__bid, self.__ask = None, None
       return None, None
     # bid adjustment
     try:
@@ -41,6 +50,7 @@ class ExchangeClient(object):
       ask = self.__adjust_fee(symbol, ask, order='ask')
     except Exception as e:
       ask = None
+    self.__bid, self.__ask = bid, ask
     return bid, ask
 
   def create_market_buy_order(self, symbol, volume):

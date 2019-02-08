@@ -3,7 +3,7 @@
 #############################################
 exchange:
   bitbank:
-    use: True
+    use: False
     api_key:
     api_secret:
   bitflyer:
@@ -15,7 +15,7 @@ exchange:
     api_key:
     api_secret:
   btcbox:
-    use: True
+    use: False
     api_key:
     api_secret:
   coincheck:
@@ -40,9 +40,11 @@ exchange:
     api_secret:
 logic:
   demo: True
-  symbols: BTC/JPY  # example: BTC/JPY;BCH/JPY;BTC/ETH
-  margin: 0.001
-  interval: 1
+  symbol: BTC/JPY
+  open_margin: 0.001
+  close_margin: 0.  # if you want not to close position, select None
+  interval: 5
+  force_close_position: False  # use op
 notification:
   discord:
     webhook_url:       # How to get: https://note.mu/asim0613/n/n23073851a93c
