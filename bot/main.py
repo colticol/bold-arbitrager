@@ -10,6 +10,7 @@ class BoldArbitrager(object):
   def __init__(self):
     self.__symbol  = settings['logic']['symbol']
     self.__interval = settings['logic']['interval']
+    self.__force_close_position = settings['logic']['force_close_position']
     self.__exchange = ExchangeController(settings['exchange'], settings['logic'])
 
   def go(self):
@@ -20,7 +21,8 @@ class BoldArbitrager(object):
     except Exception as e:
       raise e
     finally:
-      self.__exchange.force_close_position(self.__symbol)
+      if self.__force_close_position:
+        self.__exchange.force_close_position(self.__symbol)
 
 if __name__ == '__main__':
   bot = BoldArbitrager()

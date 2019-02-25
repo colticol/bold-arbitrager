@@ -24,10 +24,11 @@ class ExchangeClient(object):
     return self.__ask
 
   def update_balance(self):
-    try:
-      self.__balance = self.__exchange.fetch_free_balance()
-    except Exception as e:
-      self.__balance = None
+    if not self.__demo:
+      try:
+        self.__balance = self.__exchange.fetch_free_balance()
+      except Exception as e:
+        self.__balance = None
 
   def fetch_order_book(self, symbol):
     # fetch_order_book
@@ -54,16 +55,20 @@ class ExchangeClient(object):
     return bid, ask
 
   def create_market_buy_order(self, symbol, volume):
-    self.__exchange.create_market_buy_order(symbol, volume)
+    if not self.__demo:
+      self.__exchange.create_market_buy_order(symbol, volume)
 
   def create_market_sell_order(self, symbol, volume):
-    self.__exchange.create_market_sell_order(symbol, volume)
+    if not self.__demo:
+      self.__exchange.create_market_sell_order(symbol, volume)
 
   def create_limit_buy_order(self, symbol, volume, price):
-    self.__exchange.create_limit_buy_order(symbol, volume, price)
+    if not self.__demo:
+      self.__exchange.create_limit_buy_order(symbol, volume, price)
 
   def create_limit_sell_order(self, symbol, volume, price):
-    self.__exchange.create_limit_sell_order(symbol, volume, price)
+    if not self.__demo:
+      self.__exchange.create_limit_sell_order(symbol, volume, price)
 
   def __adjust_balance(self, symbol, pv, order='bid'):
     if self.__demo:

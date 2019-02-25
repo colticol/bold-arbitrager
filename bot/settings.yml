@@ -7,27 +7,15 @@ exchange:
     api_key:
     api_secret:
   bitflyer:
-    use: True
+    use: False
     api_key:
     api_secret:
   bitfinex:
-    use: False
-    api_key:
-    api_secret:
-  btcbox:
-    use: False
-    api_key:
-    api_secret:
-  coincheck:
-    use: False
+    use: True
     api_key:
     api_secret:
   coinex:
-    use: False
-    api_key:
-    api_secret:
-  kraken:
-    use: False
+    use: True
     api_key:
     api_secret:
   liquid:
@@ -40,8 +28,8 @@ exchange:
     api_secret:
 logic:
   demo: True
-  symbol: BTC/JPY
-  open_margin: 0.001
+  symbol: BCH/BTC
+  open_margin: 0.005
   close_margin: 0.  # if you want not to close position, select None
   interval: 5
   force_close_position: False  # use op
