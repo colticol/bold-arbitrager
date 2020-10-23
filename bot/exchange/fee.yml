@@ -1,0 +1,27 @@
+#############################################
+# input taker fees
+#############################################
+binance:
+  ELSE: 0.001
+bitbank:
+  ELSE: 0.0015
+bitflyer:
+  BTC/JPY: 0.0015
+bitfinex:
+  ELSE: 0.002
+btcbox:
+  BTC/JPY: 0.0005
+  ELSE: 0.001
+coincheck:
+  BTC/JPY: 0
+coinex:
+  ELSE: 0.001
+kraken:
+  ELSE: 0.0026
+liquid:
+  ELSE: 0
+zaif:
+  BTC/JPY: 0
+  BCH/JPY: 0.003
+  BCH/BTC: 0.003
+  ELSE: 0.001

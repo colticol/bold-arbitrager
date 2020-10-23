@@ -1,0 +1,40 @@
+#############################################
+# Check Parameters before staring
+#############################################
+exchange:
+  bitbank:
+    use: False
+    api_key:
+    api_secret:
+  bitflyer:
+    use: False
+    api_key:
+    api_secret:
+  bitfinex:
+    use: True
+    api_key:
+    api_secret:
+  coinex:
+    use: True
+    api_key:
+    api_secret:
+  liquid:
+    use: True
+    api_key:
+    api_secret:
+  zaif:
+    use: True
+    api_key:
+    api_secret:
+logic:
+  demo: True
+  symbol: BCH/BTC
+  open_margin: 0.005
+  close_margin: 0.  # if you want not to close position, select None
+  interval: 5
+  force_close_position: False  # use op
+notification:
+  discord:
+    webhook_url:       # How to get: https://note.mu/asim0613/n/n23073851a93c
+  line:
+    token:             # ref. https://notify-bot.line.me/ja/ , How to get: https://www.takeiho.com/python-line-bot
